@@ -1,6 +1,6 @@
 {
   "name": "koa-nano-request-id",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Generates unique nano id for the request and sets X-Request-Id header",
   "main": "index.js",
   "scripts": {
@@ -50,6 +50,7 @@
     "prettier": "^1.14.2"
   },
   "dependencies": {
+    "debug": "^4.0.0",
     "koa": "^2.5.2",
     "nanoid-good": "^1.2.1"
   }

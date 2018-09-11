@@ -25,12 +25,12 @@ test('sets request.id with default options', () => {
   const context = getContext()
   middleware(context, next)
 
-  const [header, value] = set.mock.calls[0]
+  const [key, value] = set.mock.calls[0]
 
   expect(context.request.id).toBeDefined()
   expect(next).toBeCalledTimes(1)
   expect(set).toBeCalledTimes(1)
-  expect(header).toEqual('X-Request-Id')
+  expect(key).toEqual('X-Request-Id')
   expect(value).toEqual(context.request.id)
 })
 
@@ -59,16 +59,16 @@ test('sets length limit to id', () => {
   expect(context.request.id).toHaveLength(length)
 })
 
-test('sets custom header', () => {
+test('sets custom header key', () => {
   const context = getContext()
-  const header = 'X-Custom-Header'
+  const key = 'X-Custom-Header'
   const middlewareWithOptions = requestId({
-    header,
+    key,
   })
 
   middlewareWithOptions(context, next)
 
-  expect(set.mock.calls[0][0]).toEqual(header)
+  expect(set.mock.calls[0][0]).toEqual(key)
 })
 
 test('sets custom alphabet', () => {
