@@ -1,0 +1,53 @@
+{
+  "name": "koa-request-id",
+  "version": "1.0.0",
+  "description": "Generates unique request id and sets X-Request-Id header",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/jest src/__tests__/*",
+    "test:watch": "yarn test -- --watch",
+    "build": "yarn prettier && yarn test && ./node_modules/.bin/babel src/index.js --out-file dist/index.js",
+    "prepublish": "yarn run build",
+    "prettier": "prettier --config ./.prettierrc --write src/index.js src/__tests__/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andreystepanov/koa-request-id.git"
+  },
+  "keywords": [
+    "request id",
+    "id",
+    "request",
+    "koa"
+  ],
+  "author": "Andrey Stepanov <me@andreystepanov.com> (https://andreystepanov.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andreystepanov/koa-request-id/issues"
+  },
+  "homepage": "https://github.com/andreystepanov/koa-request-id#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/polyfill": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-flow": "^7.0.0",
+    "@babel/register": "^7.0.0",
+    "babel-7-jest": "^21.3.3",
+    "babel-eslint": "^9.0.0",
+    "eslint": "^5.5.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-koa": "^2.0.2",
+    "eslint-config-prettier": "^3.0.1",
+    "eslint-plugin-flowtype": "^2.50.0",
+    "eslint-plugin-import": "^2.14.0",
+    "flow": "^0.2.3",
+    "flow-bin": "^0.80.0",
+    "jest": "^23.5.0",
+    "prettier": "^1.14.2"
+  },
+  "dependencies": {
+    "koa": "^2.5.2",
+    "nanoid-good": "^1.2.1"
+  }
+}
